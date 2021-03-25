@@ -1,2 +1,6 @@
-# ng-productCentral
-E-commerce React application
+# Product Central
+
+## To Do:
+- Add to Cart 
+- Total Pricing
+- Chekcout 
