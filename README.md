@@ -10,3 +10,4 @@
 - Filters
 - Styling
 - Buttons
+- Loading Spinner

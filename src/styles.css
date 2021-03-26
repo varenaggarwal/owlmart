@@ -1,10 +1,5 @@
 @import url("http://127.0.0.1:5500/main.css");
 
-
-:root{
-  --padding-1rem : 1rem;
-}
-
 .product-listing-container{
   padding: var(--padding-1rem);
   display: flex;
