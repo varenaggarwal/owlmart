@@ -13,7 +13,6 @@ export function useProductLoader() {
       setIsLoading(() => true);
       try {
         const serverResponse = await axios.get("/api/products");
-        console.log({ serverResponse });
         setIsLoading(() => false);
         dispatch({
           type: INITIAL_LOAD,

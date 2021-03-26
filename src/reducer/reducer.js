@@ -5,6 +5,7 @@ export const REMOVE_FROM_WISHLIST = "REMOVE_FROM_WISHLIST";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const INC_CART_QUANTITY = "INC_CART_QUANTITY";
 export const DEC_CART_QUANTITY = "DEC_CART_QUANTITY";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -53,6 +54,14 @@ export const reducer = (state, action) => {
           product.id === action.payload
             ? { ...product, cartQty: product.cartQty - 1 }
             : product
+        )
+      };
+
+    case REMOVE_FROM_CART:
+      return {
+        ...state,
+        productData: state.productData.map((product) =>
+          product.id === action.payload ? { ...product, cartQty: 0 } : product
         )
       };
 

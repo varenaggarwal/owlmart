@@ -13,11 +13,8 @@ export function AddToCart({ product }) {
   const incrementQty = (id) =>
     dispatch({ type: INC_CART_QUANTITY, payload: id });
 
-  const decrementQty = (id) => {
-    console.log("Here");
+  const decrementQty = (id) =>
     dispatch({ type: DEC_CART_QUANTITY, payload: id });
-    console.log({ state });
-  };
 
   return (
     <>
