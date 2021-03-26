@@ -26,7 +26,7 @@ export default function ProductListing() {
           </button>
         </li>
       ))}
-      {console.log(state.productData)}
+      {/* {console.log(state.productData)} */}
     </>
   );
 }

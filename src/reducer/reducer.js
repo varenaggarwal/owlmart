@@ -3,6 +3,8 @@ export const ROUTE = "ROUTE";
 export const INITIAL_LOAD = "INITIAL_LOAD";
 export const REMOVE_FROM_WISHLIST = "REMOVE_FROM_WISHLIST";
 export const ADD_TO_CART = "ADD_TO_CART";
+export const INC_CART_QUANTITY = "INC_CART_QUANTITY";
+export const DEC_CART_QUANTITY = "DEC_CART_QUANTITY";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -26,11 +28,39 @@ export const reducer = (state, action) => {
         ),
       };
 
-    case "ADD_TO_CART":
+    case ADD_TO_CART:
       return {
         ...state,
         productData: state.productData.map((product) =>
           product.id === action.payload ? { ...product, cartQty: 1 } : product
+        ),
+      };
+
+    case INC_CART_QUANTITY:
+      console.log("Here - ee")
+      console.log({product})
+      return {
+        ...state,
+        productData: state.productData.map((product) =>
+          product.id === action.payload ? { ...product, cartQty: 10 } : product
+        ),
+      };
+      // return {
+      //   ...state,
+      //   productData: state.product.map((product) =>
+      //     product.id === action.payload
+      //       ? { ...product, cartQty: product.cartQty + 1 }
+      //       : product
+      //   ),
+      // };
+
+    case DEC_CART_QUANTITY:
+      return {
+        ...state,
+        productData: state.product.map((product) =>
+          product.id === action.payload
+            ? { ...product, cartQty: product.cartQty - 1 }
+            : product
         ),
       };
 
