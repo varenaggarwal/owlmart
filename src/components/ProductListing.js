@@ -1,6 +1,7 @@
 import { useCartData } from "../contexts/dataContext";
 import { ADD_TO_WISHLIST } from "../reducer/reducer";
 import { AddToCart } from "./AddToCart";
+import { FilterControls } from "./FilterControls";
 
 export default function ProductListing() {
   const { state, dispatch } = useCartData();
@@ -11,6 +12,7 @@ export default function ProductListing() {
   return (
     <div className="product-listing-container">
       <h2>Product Listing</h2>
+      <FilterControls/>
         {state.productData.map((product) => (
           <div class="card card-shadow">
             <div class="new-bar">NEW</div>
@@ -18,7 +20,7 @@ export default function ProductListing() {
             <h3>{product.name}</h3>
             <p>
               <span>Price: </span>
-              <span>₹</span>
+              <span>₹</span>image 
               <span>{product.price}</span>
             </p>
             <AddToCart product={product} />
