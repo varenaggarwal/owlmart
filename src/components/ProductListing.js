@@ -9,27 +9,21 @@ export default function ProductListing() {
     dispatch({ type: ADD_TO_WISHLIST, payload: id });
 
   return (
-    < div className="product-listing-container">
+    <div className="product-listing-container">
       <h2>Product Listing</h2>
-      <ul>
         {state.productData.map((product) => (
-          <div className="list-stacked">
-            <li key={product.id} className="listing">
-              <span>{product.name}</span>
-              <span> - {product.price} </span>
-              {!product.wishlist ? (
-                <button
-                  className="btn-secondary"
-                  onClick={() => toggleWishlist(product.id)}
-                >
-                  Heart
-                </button>
-              ) : null}
-              <AddToCart product={product} />
-            </li>
+          <div class="card card-shadow">
+            <div class="new-bar">NEW</div>
+            <img class="img-responsive" src={product.img} />
+            <h3>{product.name}</h3>
+            <p>
+              <span>Price: </span>
+              <span>₹</span>
+              <span>{product.price}</span>
+            </p>
+            <AddToCart product={product} />
           </div>
         ))}
-      </ul>
     </div>
   );
 }
