@@ -9,8 +9,8 @@ export default function ProductListing() {
     dispatch({ type: ADD_TO_WISHLIST, payload: id });
 
   return (
-    <>
-      <h1>Product Listing</h1>
+    < div className="product-listing-container">
+      <h2>Product Listing</h2>
       <ul>
         {state.productData.map((product) => (
           <div className="list-stacked">
@@ -19,7 +19,7 @@ export default function ProductListing() {
               <span> - {product.price} </span>
               {!product.wishlist ? (
                 <button
-                  className="btn-primary"
+                  className="btn-secondary"
                   onClick={() => toggleWishlist(product.id)}
                 >
                   Heart
@@ -30,6 +30,6 @@ export default function ProductListing() {
           </div>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
