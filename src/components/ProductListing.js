@@ -11,18 +11,25 @@ export default function ProductListing() {
   return (
     <>
       <h1>Product Listing</h1>
-      {state.productData.map((product) => (
-        <li key={product.id} className="listing">
-          <span>{product.name}</span>
-          <span> - {product.price} </span>
-          {!product.wishlist ? (
-            <button className="btn " onClick={() => toggleWishlist(product.id)}>
-              Heart
-            </button>
-          ) : null}
-          <AddToCart product={product} />
-        </li>
-      ))}
+      <ul>
+        {state.productData.map((product) => (
+          <div className="list-stacked">
+            <li key={product.id} className="listing">
+              <span>{product.name}</span>
+              <span> - {product.price} </span>
+              {!product.wishlist ? (
+                <button
+                  className="btn-primary"
+                  onClick={() => toggleWishlist(product.id)}
+                >
+                  Heart
+                </button>
+              ) : null}
+              <AddToCart product={product} />
+            </li>
+          </div>
+        ))}
+      </ul>
     </>
   );
 }
