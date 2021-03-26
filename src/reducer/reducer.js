@@ -2,6 +2,7 @@ export const ADD_TO_WISHLIST = "ADD_TO_WISHLIST";
 export const ROUTE = "ROUTE";
 export const INITIAL_LOAD = "INITIAL_LOAD";
 export const REMOVE_FROM_WISHLIST = "REMOVE_FROM_WISHLIST";
+export const ADD_TO_CART = "ADD_TO_CART";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -12,7 +13,7 @@ export const reducer = (state, action) => {
           product.id === action.payload
             ? { ...product, wishlist: true }
             : product
-        )
+        ),
       };
 
     case REMOVE_FROM_WISHLIST:
@@ -22,7 +23,15 @@ export const reducer = (state, action) => {
           product.id === action.payload
             ? { ...product, wishlist: false }
             : product
-        )
+        ),
+      };
+
+    case "ADD_TO_CART":
+      return {
+        ...state,
+        productData: state.productData.map((product) =>
+          product.id === action.payload ? { ...product, cartQty: 1 } : product
+        ),
       };
 
     case ROUTE:
