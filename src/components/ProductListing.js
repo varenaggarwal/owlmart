@@ -1,6 +1,6 @@
 import { useCartData } from "../contexts/dataContext";
 import { ADD_TO_WISHLIST } from "../reducer/reducer";
-import  { ADD_TO_CART } from "../reducer/reducer";
+import { AddToCart } from "./AddToCart";
 
 export default function ProductListing() {
   const { state, dispatch } = useCartData();
@@ -8,7 +8,6 @@ export default function ProductListing() {
   const toggleWishlist = (id) =>
     dispatch({ type: ADD_TO_WISHLIST, payload: id });
 
-  const addToCartHandler = (id) => dispatch({ type: ADD_TO_CART, payload: id });
   return (
     <>
       <h1>Product Listing</h1>
@@ -21,12 +20,9 @@ export default function ProductListing() {
               Heart
             </button>
           ) : null}
-          <button className="btn" onClick={() => addToCartHandler(product.id)}>
-            Add to Cart
-          </button>
+          <AddToCart product={product} />
         </li>
       ))}
-      {/* {console.log(state.productData)} */}
     </>
   );
 }

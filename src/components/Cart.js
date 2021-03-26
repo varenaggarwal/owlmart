@@ -1,17 +1,8 @@
 import { useCartData } from "../contexts/dataContext";
-import { INC_CART_QUANTITY, DEC_CART_QUANTITY } from "../reducer/reducer";
+import { AddToCart } from "./AddToCart";
 
 export function Cart() {
-  const { state , dispatch } = useCartData();
-
-  const incrementQty = (id) =>
-    dispatch({ type: INC_CART_QUANTITY, payload: id });
-
-  const decrementQty = (id) =>{
-    console.log("Here")
-    dispatch({ type: DEC_CART_QUANTITY, payload: id });
-    console.log({state})
-  }
+  const { state } = useCartData();
 
   return (
     <>
@@ -21,13 +12,7 @@ export function Cart() {
         product.cartQty > 0 ? (
           <li key={product.id} className="listing">
             {product.name}
-            <button className="btn" onClick={() => incrementQty(product.id)}>
-              +
-            </button>
-            {product.cartQty}
-            <button className="btn" onClick={() => decrementQty(product.id)}>
-              -
-            </button>
+            <AddToCart product={product} />
           </li>
         ) : null
       )}

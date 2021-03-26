@@ -15,7 +15,7 @@ export const reducer = (state, action) => {
           product.id === action.payload
             ? { ...product, wishlist: true }
             : product
-        ),
+        )
       };
 
     case REMOVE_FROM_WISHLIST:
@@ -25,7 +25,7 @@ export const reducer = (state, action) => {
           product.id === action.payload
             ? { ...product, wishlist: false }
             : product
-        ),
+        )
       };
 
     case ADD_TO_CART:
@@ -33,35 +33,27 @@ export const reducer = (state, action) => {
         ...state,
         productData: state.productData.map((product) =>
           product.id === action.payload ? { ...product, cartQty: 1 } : product
-        ),
+        )
       };
 
     case INC_CART_QUANTITY:
-      console.log("Here - ee")
-      console.log({product})
       return {
         ...state,
         productData: state.productData.map((product) =>
-          product.id === action.payload ? { ...product, cartQty: 10 } : product
-        ),
+          product.id === action.payload
+            ? { ...product, cartQty: product.cartQty + 1 }
+            : product
+        )
       };
-      // return {
-      //   ...state,
-      //   productData: state.product.map((product) =>
-      //     product.id === action.payload
-      //       ? { ...product, cartQty: product.cartQty + 1 }
-      //       : product
-      //   ),
-      // };
 
     case DEC_CART_QUANTITY:
       return {
         ...state,
-        productData: state.product.map((product) =>
+        productData: state.productData.map((product) =>
           product.id === action.payload
             ? { ...product, cartQty: product.cartQty - 1 }
             : product
-        ),
+        )
       };
 
     case ROUTE:
