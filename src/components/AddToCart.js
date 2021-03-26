@@ -6,7 +6,7 @@ import {
 } from "../reducer/reducer";
 
 export function AddToCart({ product }) {
-  const { state, dispatch } = useCartData();
+  const { dispatch } = useCartData();
 
   const addToCartHandler = (id) => dispatch({ type: ADD_TO_CART, payload: id });
 

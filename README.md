@@ -5,7 +5,8 @@
 - ~Add to Cart~
 - ~Total Pricing~
 - ~Checkout~
-- Styling
-- Nav Bar
+- ~Nav Bar~
 - Cards
+- Filters
+- Styling
 - Buttons
