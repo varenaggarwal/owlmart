@@ -20,7 +20,7 @@ export default function ProductListing() {
             <h3>{product.name}</h3>
             <p>
               <span>Price: </span>
-              <span>₹</span>image 
+              <span>₹</span>
               <span>{product.price}</span>
             </p>
             <AddToCart product={product} />

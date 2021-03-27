@@ -2,7 +2,7 @@ export const productData = [
   {
     id: 1,
     name: "Amplitude workshop",
-    img:"",
+    img:"https://inc42.com/wp-content/uploads/2020/10/Artboard-1-100-1-1.jpg",
     date: "",
     location: "Online",
     price: 1000,
@@ -12,7 +12,7 @@ export const productData = [
   {
     id: 2,
     name: "ETF Masterclass | The Future of Investing",
-    img:"",
+    img:"https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1616299154%2Fymfr76sjtbjpnzt9uc3f.png",
     date: "",
     location: "Online",
     price: 999,
