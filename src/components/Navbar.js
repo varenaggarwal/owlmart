@@ -2,15 +2,14 @@ import { useCartData } from "../contexts/dataContext";
 import { ROUTE } from "../reducer/reducer";
 
 export function Navbar() {
-  
   const { state, dispatch } = useCartData();
-  
+
   const ItemsInWishlist = (acc, current) =>
     current.wishlist ? acc + 1 : acc + 0;
-  
-    const ItemsInCart = (acc, current) =>
+
+  const ItemsInCart = (acc, current) =>
     current.cartQty > 0 ? acc + 1 : acc + 0;
-  
+
   return (
     <nav className="nav-bar nav-bar-shadow">
       <button
@@ -25,7 +24,13 @@ export function Navbar() {
           onClick={() => dispatch({ type: ROUTE, payload: "wishlist" })}
         >
           <i className="fas fa-heart"></i>
-          <span className="badge">
+          <span
+            className={
+              state.productData.reduce(ItemsInWishlist, 0) > 0
+                ? "badge"
+                : "badge visibility-hidden"
+            }
+          >
             {state.productData.reduce(ItemsInWishlist, 0)}
           </span>
         </button>
@@ -34,7 +39,13 @@ export function Navbar() {
           onClick={() => dispatch({ type: ROUTE, payload: "cart" })}
         >
           <i className="fas fa-cart-plus"></i>
-          <span className="badge">
+          <span
+            className={
+              state.productData.reduce(ItemsInCart, 0) > 0
+                ? "badge"
+                : "badge visibility-hidden"
+            }
+          >
             {state.productData.reduce(ItemsInCart, 0)}
           </span>
         </button>

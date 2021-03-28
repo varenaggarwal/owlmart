@@ -21,6 +21,8 @@ export default function ProductListing() {
     return productList;
   };
 
+  // const getFilteredData = (sortedData , filter)
+
   const sortedData = getSortedData(
     state.productData,
     state.listingSettings.sortBy
