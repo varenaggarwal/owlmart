@@ -6,3 +6,7 @@
   flex-direction: column;
   flex-wrap: wrap;
 }
+
+::-webkit-scrollbar{
+	width: 0;
+}
