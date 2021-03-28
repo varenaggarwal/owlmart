@@ -6,15 +6,18 @@ export function Wishlist() {
   const { state, dispatch } = useCartData();
   return (
     <>
-      <h1>Wishlist</h1>
+      <h2>Wishlist</h2>
       {state.productData.map((product) =>
         product.wishlist ? (
-          <li key={product.id} className="listing">
-            <span>{product.name}</span>
-            <span> - {product.price}</span>
-            <AddToCart product={product} />
+        <div key={product.id} className="card card-shadow">
+          {/* <img className="img-responsive" src={product.img} /> */}
+          <h3>{product.name}</h3>
+          <p>
+            <span>Price: </span>
+            <span>₹</span>
+            <span>{product.price}</span>
             <button
-              className="btn"
+              className="cross"
               onClick={() =>
                 dispatch({
                   type: REMOVE_FROM_WISHLIST,
@@ -22,11 +25,12 @@ export function Wishlist() {
                 })
               }
             >
-              REMOVE
+              <i className="fas fa-trash"></i>
             </button>
-          </li>
-        ) : null
-      )}
+          </p>
+            <AddToCart product={product} />
+        </div>
+      ) : null)}
     </>
   );
 }
