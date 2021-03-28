@@ -6,8 +6,13 @@
 - ~Total Pricing~
 - ~Checkout~
 - ~Nav Bar~
-- Cards
+- ~Cards~
 - Filters
-- Styling
-- Buttons
+- ~Styling~
+- ~Buttons~
+- Wishlist and Cart Styling
 - Loading Spinner
+- Side Menu Modal
+- Sort filter Modal
+- Card Styling in ProductListing 
+- Desktop Styling
