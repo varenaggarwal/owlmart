@@ -7,7 +7,7 @@
 - ~Checkout~
 - ~Nav Bar~
 - ~Cards~
-- Filters
+- ~Filters~
 - ~Styling~
 - ~Buttons~
 - Wishlist and Cart Styling
