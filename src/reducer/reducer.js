@@ -8,9 +8,30 @@ export const INC_CART_QUANTITY = "INC_CART_QUANTITY";
 export const DEC_CART_QUANTITY = "DEC_CART_QUANTITY";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const SORT = "SORT";
+export const TOGGLE_INVENTORY = "TOGGLE_INVENTORY";
+export const TOGGLE_DELIVERY = "TOGGLE_DELIVERY";
 
 export const reducer = (state, action) => {
   switch (action.type) {
+    
+    case TOGGLE_INVENTORY:
+      return {
+        ...state,
+        listingSettings: {
+          ...state.listingSettings,
+          showInventoryAll: !state.listingSettings.showInventoryAll,
+        },
+      };
+
+    case TOGGLE_DELIVERY:
+      return {
+        ...state,
+        listingSettings: {
+          ...state.listingSettings,
+          showFastDeliveryOnly: !state.listingSettings.showFastDeliveryOnly,
+        },
+      };
+
     case TOGGLE_FROM_WISHLIST:
       return {
         ...state,
@@ -80,7 +101,7 @@ export const reducer = (state, action) => {
     case SORT:
       return {
         ...state,
-        filterSettings: { ...state.filterSettings, sortBy: action.payload },
+        listingSettings: { ...state.listingSettings, sortBy: action.payload },
       };
 
     case INITIAL_LOAD:

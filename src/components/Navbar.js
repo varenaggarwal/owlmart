@@ -24,7 +24,7 @@ export function Navbar() {
           className="btn-icon"
           onClick={() => dispatch({ type: ROUTE, payload: "wishlist" })}
         >
-          <i class="fas fa-heart"></i>
+          <i className="fas fa-heart"></i>
           <span className="badge">
             {state.productData.reduce(ItemsInWishlist, 0)}
           </span>
@@ -33,7 +33,7 @@ export function Navbar() {
           className="btn-icon"
           onClick={() => dispatch({ type: ROUTE, payload: "cart" })}
         >
-          <i class="fas fa-cart-plus"></i>
+          <i className="fas fa-cart-plus"></i>
           <span className="badge">
             {state.productData.reduce(ItemsInCart, 0)}
           </span>

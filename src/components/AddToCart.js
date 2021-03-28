@@ -24,14 +24,14 @@ export function AddToCart({ product }) {
             className="btn-primary"
             onClick={() => decrementQty(product.id)}
           >
-            <i class="fas fa-minus"></i>
+            <i className="fas fa-minus"></i>
           </button>
           {product.cartQty}
           <button
             className="btn-primary"
             onClick={() => incrementQty(product.id)}
           >
-            <i class="fas fa-plus"></i>
+            <i className="fas fa-plus"></i>
           </button>
         </div>
       ) : (
@@ -40,7 +40,7 @@ export function AddToCart({ product }) {
           onClick={() => addToCartHandler(product.id)}
         >
           <span>Add to Cart </span>
-          <i class="fas fa-cart-plus"></i>
+          <i className="fas fa-cart-plus"></i>
         </button>
       )}
     </>

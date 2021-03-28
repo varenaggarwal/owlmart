@@ -23,7 +23,7 @@ export default function ProductListing() {
 
   const sortedData = getSortedData(
     state.productData,
-    state.filterSettings.sortBy
+    state.listingSettings.sortBy
   );
 
   return (
@@ -31,19 +31,19 @@ export default function ProductListing() {
       <h2>Product Listing</h2>
       <ListingControls />
       {sortedData.map((product) => (
-        <div class="card card-shadow">
-          <div class="new-bar">NEW</div>
-          <img class="img-responsive" src={product.img} />
+        <div className="card card-shadow">
+          <div className="new-bar">NEW</div>
+          <img className="img-responsive" src={product.img} />
           <h3>{product.name}</h3>
           <p>
             <span>Price: </span>
             <span>₹</span>
             <span>{product.price}</span>
             <button
-              class={product.wishlist ? "heart heart-activated" : "heart"}
+              className={product.wishlist ? "heart heart-activated" : "heart"}
               onClick={() => toggleWishlist(product.id)}
             >
-              <i class={product.wishlist ? "fas fa-heart" : "far fa-heart"}></i>
+              <i className={product.wishlist ? "fas fa-heart" : "far fa-heart"}></i>
             </button>
           </p>
 

@@ -6,7 +6,7 @@ export function DataProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, {
     route: "productListing",
     productData: [],
-    filterSettings: {
+    listingSettings: {
       showInventoryAll: true,
       showFastDeliveryOnly: false,
       sortBy: null,
