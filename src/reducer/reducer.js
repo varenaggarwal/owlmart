@@ -84,12 +84,12 @@ export const reducer = (state, action) => {
     case SORT_LOW_TO_HIGH:
       return {};
 
-    case ROUTE:
-      return { ...state, route: action.payload };
-
     case INITIAL_LOAD:
       return { ...state, productData: action.payload };
 
+    case ROUTE:
+      return { ...state, route: action.payload };
+    
     default:
       return state;
   }
