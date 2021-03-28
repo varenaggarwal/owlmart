@@ -21,18 +21,27 @@ export default function ProductListing() {
     return productList;
   };
 
-  // const getFilteredData = (sortedData , filter)
+  const getFilteredData = (
+    productList,
+    { showInventoryAll, showFastDeliveryOnly }
+  ) => {
+    return productList
+      .filter((product) => (showInventoryAll ? true : product.inStock))
+      .filter((product) => (showFastDeliveryOnly ? true : product.fastDelivery));
+  };
 
   const sortedData = getSortedData(
     state.productData,
     state.listingSettings.sortBy
   );
 
+  const filteredData = getFilteredData(sortedData, state.listingSettings);
+
   return (
     <div className="product-listing-container">
       <h2>Product Listing</h2>
       <ListingControls />
-      {sortedData.map((product) => (
+      {filteredData.map((product) => (
         <div className="card card-shadow">
           <div className="new-bar">NEW</div>
           <img className="img-responsive" src={product.img} />
@@ -45,7 +54,9 @@ export default function ProductListing() {
               className={product.wishlist ? "heart heart-activated" : "heart"}
               onClick={() => toggleWishlist(product.id)}
             >
-              <i className={product.wishlist ? "fas fa-heart" : "far fa-heart"}></i>
+              <i
+                className={product.wishlist ? "fas fa-heart" : "far fa-heart"}
+              ></i>
             </button>
           </p>
 
