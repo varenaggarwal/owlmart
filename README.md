@@ -10,10 +10,10 @@
 - ~Filters~
 - ~Styling~
 - ~Buttons~
-- Wishlist Styling
-- Cart Styling
 - Loading Spinner
 - Side Menu Modal
 - Sort filter Modal
 - Card Styling in ProductListing 
+- Wishlist Styling
+- Cart Styling
 - Desktop Styling
