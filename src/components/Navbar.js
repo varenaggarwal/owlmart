@@ -12,7 +12,7 @@ export function Navbar() {
     current.cartQty > 0 ? acc + 1 : acc + 0;
   
   return (
-    <nav className="nav-bar">
+    <nav className="nav-bar nav-bar-shadow">
       <button
         onClick={() => dispatch({ type: ROUTE, payload: "productListing" })}
       >

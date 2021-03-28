@@ -7,8 +7,7 @@ export const ADD_TO_CART = "ADD_TO_CART";
 export const INC_CART_QUANTITY = "INC_CART_QUANTITY";
 export const DEC_CART_QUANTITY = "DEC_CART_QUANTITY";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
-export const SORT_HIGH_TO_LOW = "SORT_HIGH_TO_LOW";
-export const SORT_LOW_TO_HIGH = "SORT_LOW_TO_HIGH";
+export const SORT = "SORT";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -78,18 +77,18 @@ export const reducer = (state, action) => {
         ),
       };
 
-    case SORT_HIGH_TO_LOW:
-      return {};
-
-    case SORT_LOW_TO_HIGH:
-      return {};
+    case SORT:
+      return {
+        ...state,
+        filterSettings: { ...state.filterSettings, sortBy: action.payload },
+      };
 
     case INITIAL_LOAD:
       return { ...state, productData: action.payload };
 
     case ROUTE:
       return { ...state, route: action.payload };
-    
+
     default:
       return state;
   }

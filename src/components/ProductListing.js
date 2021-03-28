@@ -1,7 +1,7 @@
 import { useCartData } from "../contexts/dataContext";
 import { TOGGLE_FROM_WISHLIST } from "../reducer/reducer";
 import { AddToCart } from "./AddToCart";
-import { FilterControls } from "./FilterControls";
+import { ListingControls } from "./ListingControls";
 
 export default function ProductListing() {
   const { state, dispatch } = useCartData();
@@ -9,11 +9,28 @@ export default function ProductListing() {
   const toggleWishlist = (id) =>
     dispatch({ type: TOGGLE_FROM_WISHLIST, payload: id });
 
+  const getSortedData = (productList, sortBy) => {
+    if (sortBy && sortBy === "PRICE_HIGH_TO_LOW") {
+      return productList.sort((a, b) => b["price"] - a["price"]);
+    }
+
+    if (sortBy && sortBy === "PRICE_LOW_TO_HIGH") {
+      return productList.sort((a, b) => a["price"] - b["price"]);
+    }
+
+    return productList;
+  };
+
+  const sortedData = getSortedData(
+    state.productData,
+    state.filterSettings.sortBy
+  );
+
   return (
     <div className="product-listing-container">
       <h2>Product Listing</h2>
-      <FilterControls />
-      {state.productData.map((product) => (
+      <ListingControls />
+      {sortedData.map((product) => (
         <div class="card card-shadow">
           <div class="new-bar">NEW</div>
           <img class="img-responsive" src={product.img} />
