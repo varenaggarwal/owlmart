@@ -46,7 +46,6 @@ export function ListingControls() {
           ></input>
           Include Out of Stock
         </label>
-        {console.log(state.listingSettings)}
         <label>
           <input
             type="checkbox"

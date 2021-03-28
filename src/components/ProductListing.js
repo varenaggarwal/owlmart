@@ -27,7 +27,7 @@ export default function ProductListing() {
   ) => {
     return productList
       .filter((product) => (showInventoryAll ? true : product.inStock))
-      .filter((product) => (showFastDeliveryOnly ? true : product.fastDelivery));
+      .filter((product) => (showFastDeliveryOnly ?  product.fastDelivery :true ));
   };
 
   const sortedData = getSortedData(
@@ -42,7 +42,7 @@ export default function ProductListing() {
       <h2>Product Listing</h2>
       <ListingControls />
       {filteredData.map((product) => (
-        <div className="card card-shadow">
+        <div key={product.id} className="card card-shadow">
           <div className="new-bar">NEW</div>
           <img className="img-responsive" src={product.img} />
           <h3>{product.name}</h3>
