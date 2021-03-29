@@ -3,7 +3,7 @@ import { TOGGLE_FROM_WISHLIST } from "../reducer/reducer";
 import { AddToCart } from "./AddToCart";
 import { ListingControls } from "./ListingControls";
 
-export default function ProductListing() {
+export function ProductListing() {
   const { state, dispatch } = useCartData();
 
   const toggleWishlist = (id) =>
@@ -27,7 +27,9 @@ export default function ProductListing() {
   ) => {
     return productList
       .filter((product) => (showInventoryAll ? true : product.inStock))
-      .filter((product) => (showFastDeliveryOnly ?  product.fastDelivery :true ));
+      .filter((product) =>
+        showFastDeliveryOnly ? product.fastDelivery : true
+      );
   };
 
   const sortedData = getSortedData(

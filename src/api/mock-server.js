@@ -12,7 +12,7 @@ export default function setupMockServer() {
 
     routes() {
       this.namespace = "api";
-      this.timing = 100;
+      this.timing = 3000;
       this.resource("products");
     },
 

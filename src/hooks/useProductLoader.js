@@ -13,16 +13,16 @@ export function useProductLoader() {
       setIsLoading(() => true);
       try {
         const serverResponse = await axios.get("/api/products");
-        setIsLoading(() => false);
         dispatch({
           type: INITIAL_LOAD,
           payload: serverResponse.data.products
         });
+        setIsLoading(() => false);
       } catch (error) {
         setError(() => error);
         setIsLoading(() => false);
       }
     })();
   }, []);
-  return {};
+  return {isLoading , error};
 }
