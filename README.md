@@ -11,9 +11,10 @@
 - ~Styling~
 - ~Buttons~
 - ~Loading Spinner~
+- isLoading Enum
 - Sort filter Modal
 - Product Page + Rating
-- Card Styling in ProductListing 
+- Card Styling in ProductListing
 - Side Menu Modal
 - Wishlist Styling
 - Cart Styling
