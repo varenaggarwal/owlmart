@@ -12,10 +12,10 @@
 - ~Buttons~
 - ~Loading Spinner~
 - isLoading Enum
+- Desktop Styling
 - Sort filter Modal
-- Product Page + Rating
-- Card Styling in ProductListing
-- Side Menu Modal
 - Wishlist Styling
 - Cart Styling
-- Desktop Styling
+- Card Styling in ProductListing
+- Product Page + Rating
+- Side Menu Modal
