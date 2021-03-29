@@ -1,5 +1,6 @@
 import { createContext, useReducer, useContext } from "react";
 import { reducer } from "../reducer/reducer";
+
 export const DataContext = createContext();
 
 export function DataProvider({ children }) {
