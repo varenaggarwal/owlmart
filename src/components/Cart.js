@@ -1,4 +1,4 @@
-import { useCartData } from "../contexts/dataContext";
+import { useCartData } from "../contexts/data-context";
 import { REMOVE_FROM_CART } from "../reducer/reducer";
 import { AddToCart } from "./AddToCart";
 import { Checkout } from "./Checkout";

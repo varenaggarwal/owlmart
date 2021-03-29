@@ -1,4 +1,4 @@
-import { useCartData } from "../contexts/dataContext";
+import { useCartData } from "../contexts/data-context";
 import { TOGGLE_FROM_WISHLIST } from "../reducer/reducer";
 import { AddToCart } from "./AddToCart";
 import { ListingControls } from "./ListingControls";

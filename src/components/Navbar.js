@@ -1,4 +1,4 @@
-import { useCartData } from "../contexts/dataContext";
+import { useCartData } from "../contexts/data-context";
 import { ROUTE } from "../reducer/reducer";
 
 export function Navbar() {
@@ -13,7 +13,7 @@ export function Navbar() {
   return (
     <nav className="nav-bar nav-bar-shadow">
       <button
-      className="btn-thin"
+        className="btn-thin"
         onClick={() => dispatch({ type: ROUTE, payload: "productListing" })}
       >
         <h1>Product Central</h1>

@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { DataProvider } from "./contexts/dataContext";
+import { DataProvider } from "./contexts/data-context";
 import setupMockServer from "./api/mock-server";
 
 setupMockServer();

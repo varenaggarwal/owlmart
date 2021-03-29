@@ -1,4 +1,4 @@
-import { useCartData } from "../contexts/dataContext";
+import { useCartData } from "../contexts/data-context";
 
 export function Checkout() {
   const { state } = useCartData();

@@ -1,4 +1,4 @@
-import { useCartData } from "../contexts/dataContext";
+import { useCartData } from "../contexts/data-context";
 import {
   ADD_TO_CART,
   INC_CART_QUANTITY,

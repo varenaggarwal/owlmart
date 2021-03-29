@@ -3,7 +3,7 @@ import { ProductListing } from "./components/ProductListing";
 import { Wishlist } from "./components/Wishlist";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
-import { useCartData } from "./contexts/dataContext";
+import { useCartData } from "./contexts/data-context";
 import { useProductLoader } from "./hooks/useProductLoader";
 import "./styles.css";
 
