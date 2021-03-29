@@ -6,3 +6,7 @@
   flex-direction: column;
   flex-wrap: wrap;
 }
+
+.App{
+  background-color: var(--secondary-color-two);
+}
