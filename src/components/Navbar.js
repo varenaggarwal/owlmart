@@ -13,7 +13,7 @@ export function Navbar() {
   return (
     <nav className="nav-bar nav-bar-shadow">
       <button
-        className="btn-primary btn-thin"
+        className="btn btn-thin"
         onClick={() => dispatch({ type: ROUTE, payload: "productListing" })}
       >
         <h1>Product Central</h1>
