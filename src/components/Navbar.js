@@ -21,7 +21,7 @@ export function Navbar() {
 
       <div>
         <button
-          className="btn-icon"
+          className="btn btn-thin btn-font-size-x-large"
           onClick={() => dispatch({ type: ROUTE, payload: "wishlist" })}
         >
           <i className="fas fa-heart"></i>
@@ -36,7 +36,7 @@ export function Navbar() {
           </span>
         </button>
         <button
-          className="btn-icon"
+          className="btn btn-thin btn-font-size-x-large"
           onClick={() => dispatch({ type: ROUTE, payload: "cart" })}
         >
           <i className="fas fa-cart-plus"></i>
