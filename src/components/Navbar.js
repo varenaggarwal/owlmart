@@ -24,31 +24,35 @@ export function Navbar() {
           className="btn btn-thin btn-font-size-x-large"
           onClick={() => dispatch({ type: ROUTE, payload: "wishlist" })}
         >
-          <i className="fas fa-heart"></i>
-          <span
-            className={
-              state.productData.reduce(ItemsInWishlist, 0) > 0
-                ? "badge"
-                : "badge visibility-hidden"
-            }
-          >
-            {state.productData.reduce(ItemsInWishlist, 0)}
-          </span>
+          <div className="badge-container">
+            <i className="fas fa-heart"></i>
+            <span
+              className={
+                state.productData.reduce(ItemsInWishlist, 0) > 0
+                  ? "badge"
+                  : "badge visibility-hidden"
+              }
+            >
+              {state.productData.reduce(ItemsInWishlist, 0)}
+            </span>
+          </div>
         </button>
         <button
           className="btn btn-thin btn-font-size-x-large"
           onClick={() => dispatch({ type: ROUTE, payload: "cart" })}
         >
-          <i className="fas fa-cart-plus"></i>
-          <span
-            className={
-              state.productData.reduce(ItemsInCart, 0) > 0
-                ? "badge"
-                : "badge visibility-hidden"
-            }
-          >
-            {state.productData.reduce(ItemsInCart, 0)}
-          </span>
+          <div className="badge-container">
+            <i className="fas fa-cart-plus"></i>
+            <span
+              className={
+                state.productData.reduce(ItemsInCart, 0) > 0
+                  ? "badge"
+                  : "badge visibility-hidden"
+              }
+            >
+              {state.productData.reduce(ItemsInCart, 0)}
+            </span>
+          </div>
         </button>
       </div>
     </nav>

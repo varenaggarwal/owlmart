@@ -11,8 +11,13 @@
 - ~Styling~
 - ~Buttons~
 - ~Loading Spinner~
-- isLoading Enum
+- ~clear all~
+- inc data from server
 - Desktop Styling
+- api calls
+- ckeckout
+- coupons
+- isLoading Enum
 - Sort filter Modal
 - Wishlist Styling
 - Cart Styling

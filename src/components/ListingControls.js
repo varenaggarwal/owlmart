@@ -1,4 +1,9 @@
-import { SORT, TOGGLE_DELIVERY, TOGGLE_INVENTORY } from "../reducer/reducer";
+import {
+  CLEAR_FILTERS,
+  SORT,
+  TOGGLE_DELIVERY_FILTER,
+  TOGGLE_INVENTORY_FILTER,
+} from "../reducer/reducer";
 import { useCartData } from "../contexts/data-context";
 
 export function ListingControls() {
@@ -38,10 +43,11 @@ export function ListingControls() {
       </div>
       <div className="card card-shadow">
         <h3>Filter</h3>
+
         <label>
           <input
             type="checkbox"
-            onChange={() => dispatch({ type: TOGGLE_INVENTORY })}
+            onChange={() => dispatch({ type: TOGGLE_INVENTORY_FILTER })}
             checked={state.listingSettings.showInventoryAll}
           ></input>
           Include Out of Stock
@@ -49,11 +55,17 @@ export function ListingControls() {
         <label>
           <input
             type="checkbox"
-            onChange={() => dispatch({ type: TOGGLE_DELIVERY })}
+            onChange={() => dispatch({ type: TOGGLE_DELIVERY_FILTER })}
             checked={state.listingSettings.showFastDeliveryOnly}
           ></input>
           Fast Delivery Only
         </label>
+        <button
+          className="btn btn-secondary"
+          onClick={() => dispatch({ type: CLEAR_FILTERS })}
+        >
+          Clear All
+        </button>
       </div>
     </div>
   );
