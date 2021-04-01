@@ -13,14 +13,18 @@
 - ~Loading Spinner~
 - ~clear all~
 - ~inc data from server~
-- Desktop Styling
+- ~Desktop Styling~
+- ~Wishlist Styling~
+- ~Cart Styling~
+- ~Card Styling in ProductListing~
+- move to wishlist
 - api calls
+- toasts
 - ckeckout
+- categories
+- brands
 - coupons
 - isLoading Enum
 - Sort filter Modal
-- Wishlist Styling
-- Cart Styling
-- Card Styling in ProductListing
 - Product Page + Rating
 - Side Menu Modal
