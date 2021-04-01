@@ -40,31 +40,32 @@ export function ProductListing() {
   const filteredData = getFilteredData(sortedData, state.listingSettings);
 
   return (
-    <div className="product-listing-container">
-      <h2>Product Listing</h2>
+    <div className="app-container">
       <ListingControls />
-      {filteredData.map((product) => (
-        <div key={product.id} className="card card-shadow">
-          <div className="new-bar">NEW</div>
-          <img className="img-responsive" src={product.img} />
-          <h3>{product.name}</h3>
-          <p>
-            <span>Price: </span>
-            <span>₹</span>
-            <span>{product.price}</span>
-            <button
-              className={product.wishlist ? "heart heart-activated" : "heart"}
-              onClick={() => toggleWishlist(product.id)}
-            >
-              <i
-                className={product.wishlist ? "fas fa-heart" : "far fa-heart"}
-              ></i>
-            </button>
-          </p>
+      <div className="product-listing-container">
+        {filteredData.map((product) => (
+          <div key={product.id} className="card card-shadow">
+            <div className="new-bar">NEW</div>
+            <img className="img-responsive" src={product.img} />
+            <h3>{product.name}</h3>
+            <p>
+              <span>Price: </span>
+              <span>₹</span>
+              <span>{product.price}</span>
+              <button
+                className={product.wishlist ? "heart heart-activated" : "heart"}
+                onClick={() => toggleWishlist(product.id)}
+              >
+                <i
+                  className={product.wishlist ? "fas fa-heart" : "far fa-heart"}
+                ></i>
+              </button>
+            </p>
 
-          <AddToCart product={product} />
-        </div>
-      ))}
+            <AddToCart product={product} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

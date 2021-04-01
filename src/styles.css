@@ -2,12 +2,47 @@
 @import url("https://deploy-preview-1--owlui.netlify.app/main.css");
 
 .product-listing-container {
-  padding: var(--padding-1rem);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .App {
   background-color: var(--secondary-color-two);
+}
+
+.card {
+  margin: 0;
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  /* for desktop display */
+
+  .product-listing-container {
+    grid-area: product-listing;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .app-container {
+    display: grid;
+    grid-template-areas: "side-menu product-listing product-listing";
+  }
+
+  .side-menu {
+    grid-area: side-menu;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
 }

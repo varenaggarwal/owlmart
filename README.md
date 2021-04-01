@@ -12,7 +12,7 @@
 - ~Buttons~
 - ~Loading Spinner~
 - ~clear all~
-- inc data from server
+- ~inc data from server~
 - Desktop Styling
 - api calls
 - ckeckout

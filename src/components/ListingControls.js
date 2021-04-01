@@ -9,7 +9,7 @@ import { useCartData } from "../contexts/data-context";
 export function ListingControls() {
   const { state, dispatch } = useCartData();
   return (
-    <div>
+    <div className="side-menu">
       <div className="card card-shadow">
         <h3>Sort By</h3>
         <label>
