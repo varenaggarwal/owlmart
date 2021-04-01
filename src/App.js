@@ -14,7 +14,6 @@ export default function App() {
   if (isLoading) {
     return (
       <div className="App">
-        <Navbar />
         <LoadingScreen />
       </div>
     );

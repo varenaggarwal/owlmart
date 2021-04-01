@@ -18,8 +18,7 @@ export function Navbar() {
       >
         <h1>Product Central</h1>
       </button>
-
-      <div>
+      <div className="nav-bar--right-menu">
         <button
           className="btn btn-thin btn-font-size-x-large"
           onClick={() => dispatch({ type: ROUTE, payload: "wishlist" })}

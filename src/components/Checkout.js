@@ -6,11 +6,11 @@ export function Checkout() {
     current.cartQty > 0 ? acc + current.price * current.cartQty : acc + 0;
   return (
     <>
-      <h2>
+      <h3>
         Total Amount:
         <span> ₹ </span>
         <span>{state.productData.reduce(totalAmountReducer, 0)}</span>
-      </h2>
+      </h3>
     </>
   );
 }
