@@ -1,13 +1,13 @@
 import { useCartData } from "../contexts/data-context";
-import { REMOVE_FROM_CART } from "../reducer/reducer";
+import {
+  MOVE_TO_WISHLIST_FROM_CART,
+  REMOVE_FROM_CART,
+} from "../reducer/reducer";
 import { AddToCart } from "./AddToCart";
 import { Checkout } from "./Checkout";
 
 export function Cart() {
   const { state, dispatch } = useCartData();
-
-  const removeHandler = (id) =>
-    dispatch({ type: REMOVE_FROM_CART, payload: id });
 
   return (
     <div className="cart-container">
@@ -25,10 +25,23 @@ export function Cart() {
               </p>
               <AddToCart product={product} />
               <button
-                onClick={() => removeHandler(product.id)}
+                onClick={() =>
+                  dispatch({ type: REMOVE_FROM_CART, payload: id })
+                }
                 className="cross"
               >
                 <i className="fas fa-trash"></i>
+              </button>
+              <button
+                onClick={() =>
+                  dispatch({
+                    type: MOVE_TO_WISHLIST_FROM_CART,
+                    payload: product.id,
+                  })
+                }
+                className="btn btn-secondary"
+              >
+                Move to wishlist
               </button>
             </div>
           ) : null

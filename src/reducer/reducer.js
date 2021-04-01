@@ -11,6 +11,7 @@ export const SORT = "SORT";
 export const TOGGLE_INVENTORY_FILTER = "TOGGLE_INVENTORY_FILTER";
 export const TOGGLE_DELIVERY_FILTER = "TOGGLE_DELIVERY_FILTER";
 export const CLEAR_FILTERS = "CLEAR_FILTERS";
+export const MOVE_TO_WISHLIST_FROM_CART = "MOVE_TO_WISHLIST_FROM_CART";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -111,6 +112,16 @@ export const reducer = (state, action) => {
         ...state,
         productData: state.productData.map((product) =>
           product.id === action.payload ? { ...product, cartQty: 0 } : product
+        ),
+      };
+
+    case MOVE_TO_WISHLIST_FROM_CART:
+      return {
+        ...state,
+        productData: state.productData.map((product) =>
+          product.id === action.payload
+            ? { ...product, cartQty: 0, wishlist: true }
+            : product
         ),
       };
 
