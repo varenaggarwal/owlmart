@@ -17,13 +17,14 @@
 - ~Wishlist Styling~
 - ~Cart Styling~
 - ~Card Styling in ProductListing~
-- move to wishlist
+- ~move to wishlist~
 - api calls
 - toasts
-- ckeckout
+- checkout
 - categories
 - brands
 - coupons
+- live search
 - isLoading Enum
 - Sort filter Modal
 - Product Page + Rating
