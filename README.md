@@ -18,8 +18,10 @@
 - ~Cart Styling~
 - ~Card Styling in ProductListing~
 - ~move to wishlist~
+- price slider
 - api calls
 - toasts
+- homepage
 - checkout
 - categories
 - brands
