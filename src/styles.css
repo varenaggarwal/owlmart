@@ -1,5 +1,4 @@
-/* @import url("http://127.0.0.1:5500/main.css"); */
-@import url("https://deploy-preview-1--owlui.netlify.app/main.css");
+@import url("https://development--owlui.netlify.app/main.css");
 
 .product-listing-container {
   display: grid;
