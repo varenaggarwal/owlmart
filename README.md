@@ -19,6 +19,7 @@
 - ~Card Styling in ProductListing~
 - ~move to wishlist~
 - price slider
+- go to cart button
 - api calls
 - toasts
 - homepage
