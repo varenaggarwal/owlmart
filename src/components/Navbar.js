@@ -7,8 +7,7 @@ export function Navbar() {
   const ItemsInWishlist = (acc, current) =>
     current.wishlist ? acc + 1 : acc + 0;
 
-  const ItemsInCart = (acc, current) =>
-    current.cartQty > 0 ? acc + 1 : acc + 0;
+  const ItemsInCart = (acc, current) => (current.cartQty > 0 ? acc + 1 : acc);
 
   return (
     <nav className="nav-bar nav-bar-shadow">
