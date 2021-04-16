@@ -16,7 +16,7 @@ export function Navbar() {
         className="btn btn-thin"
         onClick={() => dispatch({ type: ROUTE, payload: "productListing" })}
       >
-        <h1>Product Central</h1>
+        <h1>OwlMart</h1>
       </button>
       <div className="nav-bar--right-menu">
         <button
