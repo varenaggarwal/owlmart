@@ -1,8 +1,9 @@
+import { useNavigate } from "react-router";
 import { useCartData } from "../contexts/data-context";
-import { ROUTE } from "../reducer/reducer";
 
 export function Navbar() {
-  const { state, dispatch } = useCartData();
+  const { state } = useCartData();
+  const navigate = useNavigate();
 
   const ItemsInWishlist = (acc, current) =>
     current.wishlist ? acc + 1 : acc + 0;
@@ -11,16 +12,21 @@ export function Navbar() {
 
   return (
     <nav className="nav-bar nav-bar-shadow">
-      <button
-        className="btn btn-thin"
-        onClick={() => dispatch({ type: ROUTE, payload: "productListing" })}
-      >
-        <h1>OwlMart</h1>
-      </button>
+      <div>
+        <button className="btn btn-thin">
+          <h1>OwlMart</h1>
+        </button>
+        <button className="btn btn-thin" onClick={() => navigate("/")}>
+          Home
+        </button>
+        <button className="btn btn-thin" onClick={() => navigate("/shop")}>
+          Shop Now
+        </button>
+      </div>
       <div className="nav-bar--right-menu">
         <button
           className="btn btn-thin btn-font-size-x-large"
-          onClick={() => dispatch({ type: ROUTE, payload: "wishlist" })}
+          onClick={() => navigate("/wishlist")}
         >
           <div className="badge-container">
             <i className="fas fa-heart"></i>
@@ -37,7 +43,7 @@ export function Navbar() {
         </button>
         <button
           className="btn btn-thin btn-font-size-x-large"
-          onClick={() => dispatch({ type: ROUTE, payload: "cart" })}
+          onClick={() => navigate("/cart")}
         >
           <div className="badge-container">
             <i className="fas fa-cart-plus"></i>

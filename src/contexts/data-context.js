@@ -5,7 +5,6 @@ export const DataContext = createContext();
 
 export function DataProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, {
-    route: "productListing",
     productData: [],
     cart: [],
     wishlist: [],

@@ -6,6 +6,9 @@ import { Navbar } from "./components/Navbar";
 import { useCartData } from "./contexts/data-context";
 import { useProductLoader } from "./hooks/useProductLoader";
 import "./styles.css";
+import { Route, Routes } from "react-router";
+import { HomePage } from "./pages/Homepage";
+import { PrivateRoute } from "./components/PrivateRoute";
 
 export default function App() {
   const { isLoading } = useProductLoader();
@@ -22,9 +25,12 @@ export default function App() {
   return (
     <div className="App">
       <Navbar />
-      {state.route === "productListing" && <ProductListing />}
-      {state.route === "wishlist" && <Wishlist />}
-      {state.route === "cart" && <Cart />}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/shop" element={<ProductListing />} />
+        <PrivateRoute path="/wishlist" element={<Wishlist />} />
+        <PrivateRoute path="/cart" element={<Cart />} />
+      </Routes>
     </div>
   );
 }
