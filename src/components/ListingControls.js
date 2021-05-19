@@ -5,6 +5,7 @@ import {
   TOGGLE_INVENTORY_FILTER,
 } from "../reducer/reducer";
 import { useCartData } from "../contexts/data-context";
+import { categories } from "../database";
 
 export function ListingControls() {
   const { state, dispatch } = useCartData();
@@ -43,7 +44,12 @@ export function ListingControls() {
       </div>
       <div className="card card-shadow">
         <h3>Filter</h3>
-
+        <button
+          className="btn btn-secondary"
+          onClick={() => dispatch({ type: CLEAR_FILTERS })}
+        >
+          Clear All
+        </button>
         <label>
           <input
             type="checkbox"
@@ -60,12 +66,20 @@ export function ListingControls() {
           ></input>
           Fast Delivery Only
         </label>
-        <button
-          className="btn btn-secondary"
-          onClick={() => dispatch({ type: CLEAR_FILTERS })}
-        >
-          Clear All
-        </button>
+        <div>
+          {categories.map((category) => (
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  // onChange={}
+                  checked={true}
+                ></input>
+                {category}
+              </label>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
