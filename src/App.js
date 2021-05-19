@@ -7,8 +7,8 @@ import { useCartData } from "./contexts/data-context";
 import { useProductLoader } from "./hooks/useProductLoader";
 import "./styles.css";
 import { Route, Routes } from "react-router";
-import { HomePage } from "./pages/Homepage";
 import { PrivateRoute } from "./components/PrivateRoute";
+import { Homepage } from "./components/";
 
 export default function App() {
   const { isLoading } = useProductLoader();
@@ -26,7 +26,7 @@ export default function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="/shop" element={<ProductListing />} />
         <PrivateRoute path="/wishlist" element={<Wishlist />} />
         <PrivateRoute path="/cart" element={<Cart />} />
