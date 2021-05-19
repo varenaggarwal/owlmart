@@ -1,0 +1,60 @@
+.text-center {
+  text-align: center;
+}
+/* add to the lib */
+.alert-box {
+  border-radius: 0.3rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--grey200);
+}
+/* Add to lib */
+.link-no-style {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.alert-box .link-text {
+  font-weight: 600;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: rgb(9, 9, 121);
+  background: radial-gradient(
+    circle,
+    var(--secondary-color) 0%,
+    var(--primary-color) 100%
+  );
+}
+
+.hero-text {
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-logo {
+  display: flex;
+  align-items: center;
+  max-width: 10rem;
+}
+
+.shop-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+}
