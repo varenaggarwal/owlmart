@@ -47,6 +47,7 @@
 }
 .hero-logo {
   display: flex;
+  flex-direction: row;
   align-items: center;
   max-width: 10rem;
 }
@@ -57,4 +58,55 @@
   align-items: center;
   padding: 1rem;
   margin: 1rem;
+}
+
+.category-menu-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.spacer-1rem {
+  width: 100%;
+  height: 1rem;
+}
+
+.banner-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.banner-card:hover {
+  transition: all 200ms ease-in-out;
+  transform: scaleY(1.05) scaleX(1.05);
+}
+
+.banner-card img {
+  border-radius: 0.5rem;
+  opacity: 0.9;
+}
+
+.banner-card-text-container {
+  position: absolute;
+  top: 0rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgb(234, 234, 236, 0.6);
+}
+
+.banner-card-text-container .heading {
+  font-weight: 600;
+  font-size: x-large;
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+  .category-menu-container {
+    grid-template-columns: 1fr 1fr;
+  }
 }

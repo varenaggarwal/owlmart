@@ -28,9 +28,30 @@ export function Homepage() {
       </div>
       <div className="shop-category">
         <h2>Featured Categories</h2>
-        {featuredCategories.map((category) => {
-          return <></>;
-        })}
+        <div className="spacer-1rem"></div>
+        <div className="category-menu-container">
+          {featuredCategories.map((category) => (
+            <div
+              key={category.name}
+              onClick={() => {
+                navigate("/shop");
+              }}
+            >
+              <div className="banner-card">
+                <div>
+                  <img
+                    className="img-responsive"
+                    src={category.img}
+                    alt={category.name}
+                  />
+                </div>
+                <div className="banner-card-text-container text-center">
+                  <div className="heading">{category.name}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
