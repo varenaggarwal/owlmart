@@ -1,5 +1,7 @@
+import "./navbar.css";
 import { useNavigate } from "react-router";
-import { useCartData } from "../contexts/data-context";
+import { useCartData } from "../../contexts/data-context";
+import whiteOWlLogo from "./images/white-owl.png";
 
 export function Navbar() {
   const { state } = useCartData();
@@ -12,16 +14,23 @@ export function Navbar() {
 
   return (
     <nav className="nav-bar nav-bar-shadow">
-      <div>
-        <button className="btn btn-thin">
-          <h1>OwlMart</h1>
-        </button>
-        <button className="btn btn-thin" onClick={() => navigate("/")}>
-          Home
-        </button>
-        <button className="btn btn-thin" onClick={() => navigate("/shop")}>
-          Shop Now
-        </button>
+      <div className="nav-bar--left-logo">
+        <div className="logo-container">
+          <div className="logo-img">
+            <img className="img-responsive" src={whiteOWlLogo} />
+          </div>
+          <button className="btn btn-thin" onClick={() => navigate("/")}>
+            <h1>OwlMart</h1>
+          </button>
+        </div>
+        <div className="nav-bar--left-menu">
+          <button className="btn btn-thin" onClick={() => navigate("/")}>
+            Home
+          </button>
+          <button className="btn btn-thin" onClick={() => navigate("/shop")}>
+            Shop Now
+          </button>
+        </div>
       </div>
       <div className="nav-bar--right-menu">
         <button

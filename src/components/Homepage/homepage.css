@@ -97,6 +97,7 @@
   align-items: center;
   padding: 1rem;
   background-color: rgb(234, 234, 236, 0.6);
+  border-radius: 0.5rem;
 }
 
 .banner-card-text-container .heading {

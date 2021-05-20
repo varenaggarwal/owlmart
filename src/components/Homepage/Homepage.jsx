@@ -9,7 +9,7 @@ export function Homepage() {
   return (
     <div>
       <div className="alert-box text-center">
-        Big Billion days till tommorow.{" "}
+        Big Billion days till midnight.{" "}
         <Link className="link-no-style link-text" to="/shop">
           Shop now!
         </Link>
@@ -20,7 +20,7 @@ export function Homepage() {
           <img className="img-responsive" src={logo} />
         </div>
         <div className="hero-text">
-          <h2>where pros gear up!</h2>
+          <h2>where tennis pros gear up!</h2>
         </div>
         <button className="btn btn-primary" onClick={() => navigate("/shop")}>
           Shop now

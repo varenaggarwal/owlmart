@@ -1,0 +1,26 @@
+.nav-bar {
+  padding: 0.4rem;
+}
+
+.nav-bar--left-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-bar--left-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-weight: 600;
+}
+
+.logo-img {
+  max-width: 3rem;
+}
+.logo-container {
+  display: flex;
+  flex-direction: row;
+}
