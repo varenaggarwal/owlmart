@@ -2,10 +2,12 @@ import { Cart } from "./components/Cart";
 import { ProductListing } from "./components/ProductListing";
 import { Wishlist } from "./components/Wishlist";
 import { LoadingScreen } from "./components/LoadingScreen";
-import { Navbar } from "./components/Navbar";
 import { useCartData } from "./contexts/data-context";
 import { useProductLoader } from "./hooks/useProductLoader";
 import "./styles.css";
+import { Route, Routes } from "react-router";
+import { PrivateRoute } from "./components/PrivateRoute";
+import { Homepage, Navbar } from "./components/";
 
 export default function App() {
   const { isLoading } = useProductLoader();
@@ -22,9 +24,12 @@ export default function App() {
   return (
     <div className="App">
       <Navbar />
-      {state.route === "productListing" && <ProductListing />}
-      {state.route === "wishlist" && <Wishlist />}
-      {state.route === "cart" && <Cart />}
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/shop" element={<ProductListing />} />
+        <PrivateRoute path="/wishlist" element={<Wishlist />} />
+        <PrivateRoute path="/cart" element={<Cart />} />
+      </Routes>
     </div>
   );
 }
